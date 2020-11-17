@@ -30,4 +30,5 @@ jobs:
     - name: build docker_test
       env:
         DOCKER_REGISTRY: 'docker.io'
+        BRANCH: ${{ github.ref }}
       run: docker build -t $DOCKER_REGISTERY/ptiteyunie/nginx:${BRANCH#refs/heads/}-$GITHUB_SHA .
