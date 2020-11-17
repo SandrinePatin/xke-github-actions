@@ -31,7 +31,7 @@ jobs:
       env:
         DOCKER_REGISTRY: 'docker.io'
         DOCKER_NAMESPACE: 'xebxke'
-        DOCKER_IMAGE: 'solutions-cactus'
+        DOCKER_IMAGE: 'cactus'
         BRANCH: ${{ github.ref }}
       run: |
         docker build -t $DOCKER_REGISTRY/$DOCKER_NAMESPACE/$DOCKER_IMAGE:${BRANCH#refs/heads/}-$GITHUB_SHA .
