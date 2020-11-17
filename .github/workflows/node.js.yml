@@ -28,4 +28,6 @@ jobs:
     - run: npm test
     - run: npm run build
     - name: build docker_test
-      run: docker build -t ptiteyunie/nginx:${BRANCH#refs/heads/}-$GITHUB_SHA .
+      env:
+        DOCKER_REGISTRY: 'docker.io'
+      run: docker build -t $DOCKER_REGISTERY/ptiteyunie/nginx:${BRANCH#refs/heads/}-$GITHUB_SHA .
