@@ -30,5 +30,10 @@ jobs:
     - name: build docker_test
       env:
         DOCKER_REGISTRY: 'docker.io'
+        DOCKER_NAMESPACE: 'xebxke'
+        DOCKER_IMAGE: 'solutions-cactus'
         BRANCH: ${{ github.ref }}
-      run: docker build -t $DOCKER_REGISTERY/ptiteyunie/nginx:lastest .
+      run: |
+        docker build -t $DOCKER_REGISTRY/$DOCKER_NAMESPACE/$DOCKER_IMAGE:${BRANCH#refs/heads/}-$GITHUB_SHA .
+        echo "::set-output name=docker_tag::$DOCKER_REGISTRY/$DOCKER_NAMESPACE/$DOCKER_IMAGE:${BRANCH#refs/heads/}-$GITHUB_SHA"
+    
