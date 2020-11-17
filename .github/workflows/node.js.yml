@@ -34,5 +34,5 @@ jobs:
         DOCKER_IMAGE: 'cactus'
         BRANCH: ${{ github.ref }}
       run: |
-        docker build -t ptiteyunie/ngnix:latest . 
+        docker build -t ptiteyunie/nginx:latest . 
     
