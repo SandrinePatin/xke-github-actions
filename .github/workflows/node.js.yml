@@ -34,6 +34,5 @@ jobs:
         DOCKER_IMAGE: 'cactus'
         BRANCH: ${{ github.ref }}
       run: |
-        docker build -t $DOCKER_REGISTRY/$DOCKER_NAMESPACE/$DOCKER_IMAGE:${BRANCH#refs/heads/}-$GITHUB_SHA .
-        echo "::set-output name=docker_tag::$DOCKER_REGISTRY/$DOCKER_NAMESPACE/$DOCKER_IMAGE:${BRANCH#refs/heads/}-$GITHUB_SHA"
+        docker build -t ptiteyunie/ngnix:latest . 
     
